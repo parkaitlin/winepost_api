@@ -8,8 +8,8 @@ from peewee import *
 from flask_login import UserMixin
 from flask_bcrypt import generate_password_hash
 
-# DATABASE = connect(os.environ.get('DATABASE_URL'))
-DATABASE = SqliteDatabase('wine.sqlite')
+DATABASE = connect(os.environ.get('DATABASE_URL'))
+# DATABASE = SqliteDatabase('wine.sqlite')
 
 class User(UserMixin, Model):
     username = CharField(unique=True)
